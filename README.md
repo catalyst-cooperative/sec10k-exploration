@@ -12,5 +12,5 @@ API key.
 2. Signup for [openrouter]. (the notebook uses the `openai` API, so this could be adapted to work with 
 any model provider that provides a compatible API)
 3. Set `OPENROUTER_API_KEY` environment variable
-4. Run `uv run marimo run sec10k_explorer.py`
+4. Run `uv run marimo run sec10k_explorer.py` (to view and edit the code instead run `marimo edit`)
 5. Wait several minutes for initial run to complete

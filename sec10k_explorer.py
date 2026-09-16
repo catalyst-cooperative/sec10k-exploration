@@ -280,7 +280,7 @@ def _(mo):
     sample_size_input = mo.ui.number(
         start=1,
         stop=1000,
-        value=10,
+        value=20,
         step=1,
         label="Number of filings to sample from date range",
     )
@@ -461,6 +461,12 @@ def _(company_selector, mo, pd, sampled_ex21_filings):
 
         selected_output = mo.vstack(
             [
+                mo.md("## Overview"),
+                mo.md(
+                    f"**Average Input Tokens:** {sampled_ex21_filings['prompt_tokens'].mean():.2f}, "
+                    f"**Average Output Tokens:** {sampled_ex21_filings['completion_tokens'].mean():.2f}, "
+                ),
+                mo.md("## Inspect Filings"),
                 company_selector,
                 mo.md(f"### {selected_company}"),
                 mo.md(
@@ -489,6 +495,11 @@ def _(company_selector, mo, pd, sampled_ex21_filings):
         )
 
     selected_output
+    return
+
+
+@app.cell
+def _():
     return
 
 
